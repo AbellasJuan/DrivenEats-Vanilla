@@ -70,7 +70,7 @@ line-height: 32px;
 letter-spacing: 0.018em;
 
 margin: 123px 0px 10px 19px;
-/*COLOQUEI 92px A MAIS POR CONTA DO "FIXED"*//
+/*COLOQUEI 92px A MAIS POR CONTA DO "FIXED"*/
 color: #333333;
 }
 
@@ -93,8 +93,8 @@ color: #333333;
 
     margin: 18px 14px 8px 14px;
 
-    background: url(imagens-drivenEats/sanduba.jpg);
     border-radius: 4px;
+    
 }
 
 .caixa-prato h1{
