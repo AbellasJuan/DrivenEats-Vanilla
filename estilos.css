@@ -198,6 +198,10 @@ color: #000000;
     background-color: #32B72F;
 }
 
+a {
+    text-decoration: none;
+}
+
 .caixa-verde-final p{
     font-family: Roboto;
     font-size: 20px;
