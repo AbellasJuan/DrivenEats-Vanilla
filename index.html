@@ -7,6 +7,9 @@
     <title>DrivenEats</title>
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="estilos.css" />
+    <script src="scripts.js"></script>
+
+    
   </head>
 
   <body>
@@ -22,30 +25,34 @@
 
 <!--PRIMEIRA FILEIRA: PRATOS PRINCIPAIS-->
 <div class="fileira-de-opçoes">  
-<div class="caixa-prato">
-    <img src="imagens-drivenEats/prato1.jpeg">
+<div class="comida1 caixa-prato" onclick="selecionadoOuNaoPrato('comida1')">
+  <ion-icon class="icone-check escondido" name="checkmark-circle"></ion-icon>  
+  <img src="imagens-drivenEats/prato1.jpeg">
     <h1>Filé de frango</h1>
-    <h2>Acompanha batatas e salada com ervilhas</h2>
+    <h2>Acompanha batatas e salada</h2>
     <p>R$19,00</p>
   </div>
   
-  <div class="caixa-prato">
+  <div class="comida2 caixa-prato" onclick="selecionadoOuNaoPrato('comida2')">
+    <ion-icon class="icone-check escondido" name="checkmark-circle"></ion-icon>
     <img src="imagens-drivenEats/prato2.jpeg">
     <h1>Contra-filé</h1>
     <h2>Acompanha arroz, salada e feijão</h2>
     <p>R$13,90</p>
   </div>
 
-  <div class="caixa-prato">
+  <div class="comida3 caixa-prato" onclick="selecionadoOuNaoPrato('comida3')">
+    <ion-icon class="icone-check escondido" name="checkmark-circle"></ion-icon>
     <img src="imagens-drivenEats/prato3.jpeg">
-    <h1>Frango grelhado fit</h1>
-    <h2>Acompanha batata e salada de verdura</h2>
+    <h1>Frango grelhado</h1>
+    <h2>Acompanha batata e salada</h2>
     <p>R$18,90</p>
   </div>
 
-  <div class="caixa-prato">
+  <div class="comida4 caixa-prato" onclick="selecionadoOuNaoPrato('comida4')">
+    <ion-icon class="icone-check escondido" name="checkmark-circle"></ion-icon>
     <img src="imagens-drivenEats/prato4.jpeg">
-    <h1>Salmão defumado</h1>
+    <h1>Salmão</h1>
     <h2>Acompanha salada e batatas cozidas</h2>
     <p>R$16,90</p>
   </div>
@@ -57,28 +64,32 @@
 </div>
 
 <div class="fileira-de-opçoes">  
-<div class="caixa-prato">
+<div class="bebida1 caixa-prato acertando-imagem-bebidas" onclick="selecionadoOuNaoBebida('bebida1')">
+  <ion-icon class="icone-check escondido" name="checkmark-circle"></ion-icon>
   <img src="imagens-drivenEats/bebida1coca.png">
   <h1>Coca-cola lata</h1>
   <h2>Coca geladinha pra te refrescar</h2>
   <p>R$4,90</p>
 </div>
 
-<div class="caixa-prato">
+<div class="bebida2 caixa-prato acertando-imagem-bebidas" onclick="selecionadoOuNaoBebida('bebida2')">
+  <ion-icon class="icone-check escondido" name="checkmark-circle"></ion-icon>
   <img src="imagens-drivenEats/bebida2.jpeg">
   <h1>Suco de laranja</h1>
   <h2>Temos 300ml, 500ml e 700ml</h2>
   <p>R$3,00</p>
 </div>
 
-<div class="caixa-prato">
+<div class="bebida3 caixa-prato acertando-imagem-bebidas" onclick="selecionadoOuNaoBebida('bebida3')">
+  <ion-icon class="icone-check escondido" name="checkmark-circle"></ion-icon>
   <img src="imagens-drivenEats/bebida3.jpeg">
   <h1>Suco de morango</h1>
   <h2>Temos 300ml, 500ml e 700ml</h2>
   <p>R$10,50</p>
 </div>
 
-<div class="caixa-prato">
+<div class="bebida4 caixa-prato acertando-imagem-bebidas" onclick="selecionadoOuNaoBebida('bebida4')">
+  <ion-icon class="icone-check escondido" name="checkmark-circle"></ion-icon>
   <img src="imagens-drivenEats/bebida4.jpeg">
   <h1>Limonada</h1>
   <h2>Temos 300ml, 500ml e 700ml</h2>
@@ -92,31 +103,35 @@
 </div>
 
 <div class="fileira-de-opçoes">  
-  <div class="caixa-prato">
+  <div class="sobremesa1 caixa-prato" onclick="selecionadoOuNaoSobremesa('sobremesa1')">
+    <ion-icon class="icone-check escondido" name="checkmark-circle"></ion-icon>
     <img src="imagens-drivenEats/sobremesa1.jpeg">
     <h1>Pudim de leite</h1>
     <h2>Delicioso pudim de leite da vovó</h2>
     <p>R$24,80</p>
   </div>
 
-  <div class="caixa-prato">
+  <div class="sobremesa2 caixa-prato" onclick="selecionadoOuNaoSobremesa('sobremesa2')">
+    <ion-icon class="icone-check escondido" name="checkmark-circle"></ion-icon>
     <img src="imagens-drivenEats/sobremesa2.jpeg">
     <h1>Petit gateau</h1>
     <h2>Chocolate, doce de leite ou baunilha</h2>
     <p>R$17,00</p>
   </div>
 
-  <div class="caixa-prato">
-    <img src="imagens-drivenEats/sobremesa3.jpeg">
+ <div class="sobremesa3 caixa-prato" onclick="selecionadoOuNaoSobremesa('sobremesa3')">
+  <ion-icon class="icone-check escondido" name="checkmark-circle"></ion-icon>  
+  <img src="imagens-drivenEats/sobremesa3.jpeg">
     <h1>Torta alemã</h1>
     <h2>Torta diretamente da Alemanha</h2>
     <p>R$10,90</p>
   </div>
 
-  <div class="caixa-prato">
-    <img src="imagens-drivenEats/sobremesa4.jpeg">
+ <div class="sobremesa4 caixa-prato" onclick="selecionadoOuNaoSobremesa('sobremesa4')">
+  <ion-icon class="icone-check escondido" name="checkmark-circle"></ion-icon>  
+  <img src="imagens-drivenEats/sobremesa4.jpeg">
     <h1>Pavê de chocolate</h1>
-    <h2>Dá pra ver e depois comer</h2>
+    <h2>Pavê e pacumê</h2>
     <p>R$19,90</p>
   </div>
  </div>
@@ -126,8 +141,13 @@
       <p>Selecione os 3 itens<br> para fechar o pedido</p>      
     </div>
 
- </div>
+    <button  class="caixa-verde-final escondido">
+      <p>Fechar pedido</p>      
+    </button>
 
+   </div>
+ 
+    
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
   </body>
 </html>

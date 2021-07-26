@@ -24,6 +24,8 @@ body{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
     background-color: #CF2B2B;
+
+    z-index: 999;
 }
 
 .caixa-topo h1{
@@ -35,6 +37,8 @@ letter-spacing: -0.012em;
 padding-left: 21px;
 padding-top: 8px;
 color: white;
+
+z-index: 1000;
 }
 
 .caixa-topo h2{
@@ -47,6 +51,7 @@ padding-left: 21px;
 padding-bottom: 18px;
 
 color: white;
+z-index: 1001;
 }
 /*FIM DA CAIXA DO TOPO*/
 
@@ -79,22 +84,32 @@ color: #333333;
     height: 216px;
     width: 172px;
 
+    position: relative;   
+    
     margin: 0px -3px 27px 19px;
     
-    box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 7px 10px 3px rgba(0, 0, 0, 0.25);
     border-radius: 9px;
 
     background-color: white;
 }
 
+.caixa-prato:hover{
+    cursor: pointer; 
+}
+
+
 .caixa-prato img{
     width: 144px;
     height: 87px;
 
-    margin: 18px 14px 8px 14px;
+    margin: 18px 9px 8px 9px;
 
     border-radius: 4px;
-    
+}
+/*ESSA DIV SO VAI SER PRAS IMAGENS DAS BEBIDAS*/
+.acertando-imagem-bebidas img{
+    object-fit:contain;
 }
 
 .caixa-prato h1{
@@ -172,3 +187,57 @@ color: #000000;
 }
 
 
+/*classes que vao entrar ao clicar*/
+/*MODIFICAÇÕES AO ESTAREM AS 3 SELECIONADAS "true"*/
+.caixa-verde-final {
+    width: 364px;
+    height: 61px;
+
+    border-radius: 50px;
+      
+    background-color: #32B72F;
+}
+
+.caixa-verde-final p{
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.018em;
+
+    color: white;
+}
+/*FIM DAS MODIFICAÇÕES AO ESTAREM AS 3 SELECIONADAS "true"*/
+/*INICIO DA BARRINHA VERDE DE CONTORNO AO CLICAR*/
+.borda-verde-P{
+    
+   box-shadow: inset 0px 0px 0px 5px #32B72F;
+}
+.borda-verde-B{
+    
+    box-shadow: inset 0px 0px 0px 5px #32B72F;
+ }
+ .borda-verde-S{
+    
+    box-shadow: inset 0px 0px 0px 5px #32B72F;
+ }
+
+.icone-check{
+    /*<ion-icon name="checkmark-circle-outline"></ion-icon>*/
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    
+    color:#32B72F;
+
+    font-size: 20px;
+}
+
+.escondido{
+    display: none;
+}
+
+
+/*FIM DA BARRINHA VERDE DE CONTORNO AO CLICAR*/
+/*fim das classes q vao entrar ao clicar*/
