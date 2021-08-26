@@ -1,74 +1,105 @@
+let contadorItems = 0;
 
+let prato;
+let bebida;
+let sobremesa;
 
+let precoPrato;
+let precoBebida;
+let precoSobremesa;
+let precoTotal = 0;
 
-function verificaPedido(){
-    const comidas = document.querySelector(".borda-verde-P");
+function selecionarPrato (elemento, nomePrato, preco) {
     
-    const bebidas = document.querySelector(".borda-verde-B");
-    
-    const sobremesas = document.querySelector (".borda-verde-S");
-    
-    if(comidas !== null && bebidas !==null && sobremesas !== null) {
+    const selecionado = document.querySelector(".prato .selecionado");
 
-        const SelecionarCaixaVerde = document.querySelector(".caixa-verde-final");
-        SelecionarCaixaVerde.classList.remove("escondido");
-
-        const SelecionarCaixaCinza = document.querySelector(".caixa-cinza-final");
-        SelecionarCaixaCinza.classList.add("escondido");
+    if (selecionado !== null) {
+        selecionado.classList.remove("selecionado");
+    } else {
+        contadorItems = contadorItems + 1;
     }
+
+    precoPrato = preco;
+    prato = nomePrato;
+    elemento.classList.add("selecionado");
+    verificarPedido();
 }
 
-function selecionadoOuNaoPrato(qualPrato) {
+function selecionarBebida (elemento, nomeBebida, preco) {
     
-    const botaoMarcado = document.querySelector(".borda-verde-P");
-    if(botaoMarcado !== null) {
-        const iconeMarcado = botaoMarcado.querySelector(".icone-check")  
-        iconeMarcado.classList.add("escondido");
+    const selecionado = document.querySelector(".bebida .selecionado");
 
-        botaoMarcado.classList.remove("borda-verde-P");
+    if (selecionado !== null) {
+        selecionado.classList.remove("selecionado");
+    } else {
+        contadorItems = contadorItems + 1;
+        
     }
-    
-    const selecionarItem = document.querySelector("." + qualPrato);
-    selecionarItem.classList.add("borda-verde-P");
-    const icone = selecionarItem.querySelector(".icone-check");
-    icone.classList.remove("escondido");
-
-    verificaPedido();
+    precoBebida = preco;
+    bebida = nomeBebida;
+    elemento.classList.add("selecionado");
+    verificarPedido();
 }
 
-function selecionadoOuNaoBebida(qualBebida) {
+function selecionarSobremesa (elemento, nomeSobremesa, preco) {
     
-    const botaoMarcado = document.querySelector(".borda-verde-B");
-    if(botaoMarcado !== null) {
-        const iconeMarcado = botaoMarcado.querySelector(".icone-check")  
-        iconeMarcado.classList.add("escondido");
+    const selecionado = document.querySelector(".sobremesa .selecionado");
 
-        botaoMarcado.classList.remove("borda-verde-B");
+    if (selecionado !== null) {
+        selecionado.classList.remove("selecionado");
+    } else {
+        contadorItems = contadorItems + 1;
+        
     }
-    
-    const selecionarItem = document.querySelector("." + qualBebida);
-    selecionarItem.classList.add("borda-verde-B");
-    const icone = selecionarItem.querySelector(".icone-check");
-    icone.classList.remove("escondido");
+    precoSobremesa = preco;
+    sobremesa = nomeSobremesa;
 
-    verificaPedido();
+    elemento.classList.add("selecionado");
+    verificarPedido();
 }
 
-function selecionadoOuNaoSobremesa(qualSobremesa) {
-    
-    const botaoMarcado = document.querySelector(".borda-verde-S");
-    if(botaoMarcado !== null) {
-        const iconeMarcado = botaoMarcado.querySelector(".icone-check")  
-        iconeMarcado.classList.add("escondido");
+function confirmarPedido () {
 
-        botaoMarcado.classList.remove("borda-verde-S");
-    }
-    
-    const selecionarItem = document.querySelector("." + qualSobremesa);
-    selecionarItem.classList.add("borda-verde-S");
-    const icone = selecionarItem.querySelector(".icone-check");
-    icone.classList.remove("escondido");
+    const modal = document.querySelector(".overlay");
+    modal.classList.remove("escondido");
 
-    verificaPedido();
+
+    precoTotal = precoPrato + precoBebida + precoSobremesa;
+
+    document.querySelector(".confirmar-pedido .prato .nome").innerHTML = prato;
+
+    document.querySelector(".confirmar-pedido .prato .preco").innerHTML = precoPrato.toFixed(2);
+
+    document.querySelector(".confirmar-pedido .bebida .nome").innerHTML = bebida;
+
+    document.querySelector(".confirmar-pedido .bebida .preco").innerHTML = precoBebida.toFixed(2);
+
+    document.querySelector(".confirmar-pedido .sobremesa .nome").innerHTML = sobremesa;
+
+    document.querySelector(".confirmar-pedido .sobremesa .preco").innerHTML = precoSobremesa.toFixed(2);
+
+    document.querySelector(".confirmar-pedido .total .preco").innerHTML = precoTotal.toFixed(2);
+
 }
 
+
+function cancelarPedido () {
+    const modal = document.querySelector(".overlay");
+    modal.classList.add("escondido");
+}
+
+function enviarZap () {
+    const telefoneRestaurante = 553299999999;
+    const encodedText = encodeURIComponent(`Olá, gostaria de fazer o pedido: \n- Prato: ${prato} \n- Bebida: ${bebida} \n- Sobremesa: ${sobremesa} \nTotal: R$ ${precoTotal.toFixed(2)}`);
+
+    const urlWhatsapp = `https://wa.me/${telefoneRestaurante}?text=${encodedText}`;
+    window.open(urlWhatsapp);    
+}
+
+function verificarPedido () {
+    if (contadorItems === 3) {
+        const botao = document.querySelector(".fazer-pedido");
+        botao.classList.add("ativo");
+        botao.innerHTML = "Fazer pedido";
+    }
+}
